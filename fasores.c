@@ -10,6 +10,7 @@
 #include "conversion.h"
 #include "operaciones_bin.h"
 #include <math.h>
+#include <string.h>
 
 void operacion_suma_fasores () {
 
@@ -19,12 +20,36 @@ void operacion_suma_fasores () {
 	printf ("Segunda funcion: \n\n");
 	func_trig f2= ingresar_funcion ();
 
+
 	if (verificarFrecuencia (f1.frec, f2.frec)) {
+
+		pasaje_entre_func (&f1, &f2);
 
 		sumar_sinusoidales (f1,f2);
 
 	}
 
+}
+
+void pasaje_entre_func (func_trig* f1, func_trig* f2) {
+
+	if (strcmp(f1->funcion, f2->funcion)!=0) {
+
+		if (strcmp(f1->funcion, "sen")==0) {
+
+			strcpy (f2->funcion,"sen");
+			f2->fase = f2->fase + (M_PI / 2);
+
+		}
+
+		if (strcmp(f2->funcion, "sen")==0) {
+
+			strcpy (f1->funcion,"sen");
+			f1->fase = f1->fase + (M_PI / 2);
+
+		}
+
+	}
 }
 
 

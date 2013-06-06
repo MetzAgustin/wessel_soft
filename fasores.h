@@ -36,4 +36,6 @@ fasor obtenerFasor (func_trig);
 
 func_trig ingresar_funcion ();
 
+void pasaje_entre_func (func_trig*, func_trig*);
+
 #endif /* FASORES_H_ */
