@@ -25,7 +25,7 @@ void menu (){
 			"Raices N-esimas ()\n"
 			"Raices Primitivas ()\n");
 
-	printf ("Ingrese 'Q' para salir\n");
+	printf ("Ingrese 'Q' para salir\n\n");
 }
 
 void seleccion(char op) {

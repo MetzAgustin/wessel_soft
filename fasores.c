@@ -14,10 +14,10 @@
 
 void operacion_suma_fasores () {
 
-	printf ("Primer funcion: \n\n");
+	printf ("\nPrimer funcion: \n\n");
 	func_trig f1= ingresar_funcion ();
 
-	printf ("Segunda funcion: \n\n");
+	printf ("\nSegunda funcion: \n\n");
 	func_trig f2= ingresar_funcion ();
 
 
@@ -102,6 +102,6 @@ void sumar_sinusoidales (func_trig f, func_trig g) {
 
 	p= convertBinToPolar (z);
 
-	printf (" %f %s (%f t + (%f)) \n\n",p.modulo,f.funcion,f.frec,p.argumento);
+	printf ("\nResultado: %f %s (%f t + (%f)) \n\n",p.modulo,f.funcion,f.frec,p.argumento);
 
 }
