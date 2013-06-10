@@ -51,6 +51,7 @@ void seleccion(char op) {
 			while (getchar() != '\n');
 			complejoBin resPot = potenciaNat_bin (p, pot);
 			imprimir((void*)&resPot, 0);
+			break;
 		}
 		if (seleccionarForma() == 'P') {
 			int pot;
@@ -60,6 +61,7 @@ void seleccion(char op) {
 			while (getchar() != '\n');
 			complejoPol resPot = potenciaNat_pol (p, pot);
 			imprimir((void*)&resPot, 1);
+			break;
 		}
 		break;
 
@@ -72,6 +74,7 @@ void seleccion(char op) {
 			while (getchar() != '\n')
 				;
 			raizN_esima_bin(p, raiz);
+			break;
 		}
 		if (seleccionarForma() == 'P') {
 			int raiz;
@@ -81,6 +84,7 @@ void seleccion(char op) {
 			while (getchar() != '\n')
 				;
 			raizN_esima_pol(p, raiz);
+			break;
 		}
 		break;
 

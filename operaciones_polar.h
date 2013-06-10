@@ -17,4 +17,6 @@ complejoPol dividir_pol (complejoPol, complejoPol);
 complejoPol potenciaNat_pol (complejoPol, int);
 void raizN_esima_pol (complejoPol, int);
 
+int mcd (int, int);
+
 #endif /* OPERACIONES_POLAR_H_ */

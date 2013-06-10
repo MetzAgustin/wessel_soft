@@ -17,9 +17,8 @@ func_trans ingreso_func_transferencia () {
 	int i=0;
 	int ing,ing2=0;
 
-	printf ("Ingrese los ceros de la función (diez como max): \n"
-			"(ingresar primero la parte real y luego la imaginaria)"
-			"(ingresar X X para finalizar)\n\n");
+	printf ("Ingrese los ceros de la función (diez como max): \n\n");
+
 
 	int fin=0;
 
@@ -40,7 +39,7 @@ func_trans ingreso_func_transferencia () {
 		f.len_ceros=i;
 	}
 
-	printf("Ingrese los polos de la función (diez como max): \n");
+	printf("Ingrese los polos de la función (diez como max): \n\n");
 
 	fin=0;
 
