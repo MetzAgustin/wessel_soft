@@ -91,7 +91,7 @@ void evaluar (func_trans func) {
 	complejoBin resultado_cociente = dividir_bin (numerador, denominador);
 
 	printf ("F (%lf ; %lf) = ", comp.real, comp.imaginario);
-	imprimir (&resultado_cociente, 0);
+	imprimir ((void*)&resultado_cociente, 0);
 
 }
 

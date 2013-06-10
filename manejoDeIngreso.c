@@ -6,6 +6,7 @@
  */
 
 #include "manejoDeIngreso.h"
+#include "transferencia.h"
 #include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -28,6 +29,9 @@ void menu (){
 }
 
 void seleccion(char op) {
+
+	char continuar=1;
+	func_trans func;
 
 	switch (op) {
 
@@ -149,6 +153,20 @@ void seleccion(char op) {
 		break;
 
 	case 'T':
+
+		func = ingreso_func_transferencia ();
+
+		while (continuar=='C') {
+
+			evaluar (func);
+
+			printf ("\nEscriba 'C' para evaluar la funcion en otro punto"
+					"\nEscriba 'V' para volver al menu");
+
+			scanf ("%c", &continuar);
+			while(getchar()!='\n');
+		}
+
 		break;
 
 	}

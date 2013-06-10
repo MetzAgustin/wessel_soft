@@ -21,5 +21,6 @@ typedef struct {
 } func_trans;
 
 func_trans ingreso_func_transferencia ();
+void evaluar (func_trans);
 
 #endif /* TRANSFERENCIA_H_ */
