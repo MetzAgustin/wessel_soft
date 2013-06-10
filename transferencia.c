@@ -18,27 +18,47 @@ func_trans ingreso_func_transferencia () {
 	int ing,ing2=0;
 
 	printf ("Ingrese los ceros de la función (diez como max): \n"
-			"(ngresar primero la parte real y luego la imaginaria)\n\n");
+			"(ingresar primero la parte real y luego la imaginaria)"
+			"(ingresar X X para finalizar)\n\n");
 
-	for (i=0; i<10; i++){
+	int fin=0;
+
+	for (i=0; (i<10) & (fin==0); i++){
 
 		printf ("Cero [%d]: \n",i);
 		scanf ("%d %d", &ing, &ing2);
-		f.ceros[i].real= ing;
-		f.ceros[i].imaginario= ing2;
 
+		if (ing=='X') {
+
+			fin=1;
+		} else {
+
+			f.ceros[i].real= ing;
+			f.ceros[i].imaginario= ing2;
+		}
+
+		f.len_ceros=i;
 	}
 
 	printf("Ingrese los polos de la función (diez como max): \n");
 
-	for (i=0; i<10; i++){
+	fin=0;
+
+	for (i=0; (i<10) & (fin==0); i++){
 
 		printf ("Polo [%d]: \n",i);
 		scanf ("%d %d", &ing, &ing2);
-		f.polos[i].real= ing;
-		f.polos[i].imaginario= ing2;
+		if (ing == 'X') {
 
+			fin= 1;
+		} else {
+
+			f.polos[i].real = ing;
+			f.polos[i].imaginario = ing2;
 		}
+
+		f.len_polos=i;
+	}
 
 	int k=0;
 
