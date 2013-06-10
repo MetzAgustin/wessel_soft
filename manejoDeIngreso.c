@@ -21,9 +21,8 @@ void menu (){
 			"Division (/)\n"
 			"Multiplicacion (*)\n"
 			"Potencia Natural (P)\n"
-			"Radicación Natural (R)\n"
-			"Raices N-esimas ()\n"
-			"Raices Primitivas ()\n");
+			"Radicacion Natural (R)\n"
+			"Funcion Transferencia (T)\n");
 
 	printf ("Ingrese 'Q' para salir\n\n");
 }
@@ -147,6 +146,9 @@ void seleccion(char op) {
 			imprimir ((void*)&div,1);
 			break;
 		}
+		break;
+
+	case 'T':
 		break;
 
 	}
