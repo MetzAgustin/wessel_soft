@@ -165,7 +165,7 @@ void seleccion(char op) {
 			evaluar (func);
 
 			printf ("\nEscriba 'C' para evaluar la funcion en otro punto"
-					"\nEscriba 'V' para volver al menu");
+					"\nEscriba 'V' para volver al menu\n\n");
 
 			scanf ("%c", &continuar);
 			while(getchar()!='\n');

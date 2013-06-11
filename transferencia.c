@@ -14,11 +14,17 @@ func_trans ingreso_func_transferencia () {
 
 	func_trans f;
 
+	char d='N';
+
 	int i=0;
 	int ing,ing2=0;
 
-	printf ("Ingrese los ceros de la función (diez como max): \n\n");
+	printf ("Desea ingresar ceros? S-Si  N-No\n");
+	scanf ("%c", &d);
 
+	if (d=='N') goto SEC_POLOS;
+
+	printf ("Ingrese los ceros de la función (diez como max): \n\n");
 
 	char fin='S';
 
@@ -42,6 +48,13 @@ func_trans ingreso_func_transferencia () {
 	}
 
 	f.len_ceros=i;
+
+	SEC_POLOS:
+
+	printf ("Desea ingresar polos? S-Si  N-No\n");
+	scanf ("%c", &d);
+
+	if (d=='N') goto SEC_RES;
 
 	printf("Ingrese los polos de la función (diez como max): \n\n");
 
@@ -68,6 +81,8 @@ func_trans ingreso_func_transferencia () {
 	}
 
 	f.len_polos=i;
+
+	SEC_RES:
 
 	printf ("Ingrese constante de proporcionalidad (k): ");
 	scanf ("%d", &f.k);
