@@ -30,7 +30,7 @@ void menu (){
 
 void seleccion(char op) {
 
-	char continuar=1;
+	char continuar='C';
 	func_trans func;
 
 	switch (op) {

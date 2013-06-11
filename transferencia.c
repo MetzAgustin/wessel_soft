@@ -20,49 +20,58 @@ func_trans ingreso_func_transferencia () {
 	printf ("Ingrese los ceros de la función (diez como max): \n\n");
 
 
-	int fin=0;
+	char fin='S';
 
-	for (i=0; (i<10) & (fin==0); i++){
+	for (i=0; (i<10) & (fin=='S'); i++){
 
 		printf ("Cero [%d]: \n",i);
 		scanf ("%d %d", &ing, &ing2);
+		while(getchar()!='\n');
 
-		if (ing=='X') {
+		if (i!=9) {
 
-			fin=1;
-		} else {
-
-			f.ceros[i].real= ing;
-			f.ceros[i].imaginario= ing2;
+			printf("Desea ingresar otra raiz? \nS-Si \nN-No\n");
+			scanf("%c", &fin);
+			while (getchar() != '\n')
+				;
 		}
 
-		f.len_ceros=i;
+		f.ceros[i].real= ing;
+		f.ceros[i].imaginario= ing2;
+
 	}
+
+	f.len_ceros=i;
 
 	printf("Ingrese los polos de la función (diez como max): \n\n");
 
-	fin=0;
+	fin='S';
+	i=0;
 
-	for (i=0; (i<10) & (fin==0); i++){
+	for (i=0; (i<10) & (fin=='S'); i++){
 
 		printf ("Polo [%d]: \n",i);
 		scanf ("%d %d", &ing, &ing2);
-		if (ing == 'X') {
+		while(getchar()!='\n');
 
-			fin= 1;
-		} else {
+		if (i != 9) {
 
-			f.polos[i].real = ing;
-			f.polos[i].imaginario = ing2;
+			printf("Desea ingresar otro polo? \nS-Si \nN-No\n");
+			scanf("%c", &fin);
+			while (getchar() != '\n')
+				;
 		}
 
-		f.len_polos=i;
+		f.polos[i].real = ing;
+		f.polos[i].imaginario = ing2;
+
 	}
 
-	int k=0;
+	f.len_polos=i;
 
 	printf ("Ingrese constante de proporcionalidad (k): ");
-	scanf ("%d", &k);
+	scanf ("%d", &f.k);
+	while(getchar()!='\n');
 
 	return f;
 
@@ -74,6 +83,7 @@ void evaluar (func_trans func) {
 
 	printf ("Ingrese punto a evaluar: ");
 	scanf ("%lf %lf", &comp.real, &comp.imaginario);
+	while(getchar()!='\n');
 
 	int i;
 	complejoBin vec_numerador [10];
