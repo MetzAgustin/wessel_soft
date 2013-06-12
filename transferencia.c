@@ -29,7 +29,7 @@ func_trans ingreso_func_transferencia () {
 	scanf ("%d", &f.k);
 	while(getchar()!='\n');
 	
-	printf ("F (s) = %d ", f.k);
+	printf ("\n\nF (s) = %d ", f.k);
 	
 	int i=0;
 	for (i=0; i<=f.len_ceros;i++) {
