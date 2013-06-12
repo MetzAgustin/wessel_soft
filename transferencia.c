@@ -34,15 +34,16 @@ func_trans ingreso_func_transferencia () {
 	int i=0;
 	for (i=0; i<=f.len_ceros;i++) {
 		
-		printf ("[ s - ( %d , %d ) ] ", f.ceros[i].real, f.ceros[i].imagin);
+		printf ("[s-(%.2f,%.2f)] ", f.ceros[i].real, f.ceros[i].imaginario);
 		
 	};
 	
-	printf ("         ------------------------------------------");
+	printf ("\n         ------------------------------------------\n"
+			"             ");
 	
 	for (i=0; i<=f.len_polos;i++) {
 		
-		printf ("[ s - ( %d , %d ) ] ", f.polos[i].real, f.polos[i].imagin);
+		printf ("[s-(%.2f,%.2f)] ", f.polos[i].real, f.polos[i].imaginario);
 		
 	};
 	
@@ -75,7 +76,7 @@ void evaluar (func_trans func) {
 
 	for (i=0; i<=func.len_polos; i++) {
 
-		vec_denominador[i]= restar_bin (comp, func.polos[0]);
+		vec_denominador[i]= restar_bin (comp, func.polos[i]);
 	}
 
 	for (i=0; i<=func.len_ceros; i++) {
@@ -104,6 +105,7 @@ void ingreso_ceros_polos (int t, complejoBin* array, int* total) {
 	char fin = 'S';
 	int i, ing, ing2;
 	char *cad= malloc (5);
+	*total=0;
 
 	if (t==0) {
 		strcpy (cad, "Cero");
@@ -129,8 +131,9 @@ void ingreso_ceros_polos (int t, complejoBin* array, int* total) {
 		array[i].real = ing;
 		array[i].imaginario = ing2;
 
+		*total = i;
+
 	}
 
-	*total = i;
 
 }

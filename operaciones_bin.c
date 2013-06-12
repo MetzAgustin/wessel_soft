@@ -111,14 +111,14 @@ void raizCuadrada_bin (complejoBin x){
 	if (x.imaginario>0) {
 
 
-		printf ("U = ( %f ; %f )  v  U = ( %f ; %f )\n",r1,r2,rMenos1,rMenos2);
+		printf ("U = (%.2f;%.2f)  v  U = (%.2f;%.2f)\n",r1,r2,rMenos1,rMenos2);
 
 	}
 
 	if (x.imaginario<0) {
 
 
-		printf ("U = ( %f ; %f )  v  U = ( %f ; %f )\n",r1,rMenos2,rMenos1,r2);
+		printf ("U = (%.2f;%.2f)  v  U = (%.2f;%.2f)\n",r1,rMenos2,rMenos1,r2);
 
 	}
 

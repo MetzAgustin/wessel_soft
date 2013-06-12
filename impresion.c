@@ -26,7 +26,7 @@ void imprimir (void* complejo, int forma) {
 		complejoPol* o = malloc(sizeof(complejoPol));
 		o = (complejoPol*) complejo;
 
-		printf(" [ %f ; %f ] \n", o->modulo, o->argumento);
+		printf(" [%.2f;%.2f] \n", o->modulo, o->argumento);
 
 	}
 }
