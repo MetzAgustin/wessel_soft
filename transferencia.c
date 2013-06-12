@@ -9,80 +9,21 @@
 #include "operaciones_bin.h"
 #include "impresion.h"
 #include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 func_trans ingreso_func_transferencia () {
 
 	func_trans f;
 
-	char d='N';
-
-	int i=0;
-	int ing,ing2=0;
-
-	printf ("Desea ingresar ceros? S-Si  N-No\n");
-	scanf ("%c", &d);
-
-	if (d=='N') goto SEC_POLOS;
-
 	printf ("Ingrese los ceros de la función (diez como max): \n\n");
 
-	char fin='S';
+	ingreso_ceros_polos (0,f.ceros,&f.len_ceros);
 
-	for (i=0; (i<10) & (fin=='S'); i++){
-
-		printf ("Cero [%d]: \n",i);
-		scanf ("%d %d", &ing, &ing2);
-		while(getchar()!='\n');
-
-		if (i!=9) {
-
-			printf("Desea ingresar otra raiz? \nS-Si \nN-No\n");
-			scanf("%c", &fin);
-			while (getchar() != '\n')
-				;
-		}
-
-		f.ceros[i].real= ing;
-		f.ceros[i].imaginario= ing2;
-
-	}
-
-	f.len_ceros=i;
-
-	SEC_POLOS:
-
-	printf ("Desea ingresar polos? S-Si  N-No\n");
-	scanf ("%c", &d);
-
-	if (d=='N') goto SEC_RES;
 
 	printf("Ingrese los polos de la función (diez como max): \n\n");
 
-	fin='S';
-	i=0;
-
-	for (i=0; (i<10) & (fin=='S'); i++){
-
-		printf ("Polo [%d]: \n",i);
-		scanf ("%d %d", &ing, &ing2);
-		while(getchar()!='\n');
-
-		if (i != 9) {
-
-			printf("Desea ingresar otro polo? \nS-Si \nN-No\n");
-			scanf("%c", &fin);
-			while (getchar() != '\n')
-				;
-		}
-
-		f.polos[i].real = ing;
-		f.polos[i].imaginario = ing2;
-
-	}
-
-	f.len_polos=i;
-
-	SEC_RES:
+	ingreso_ceros_polos (1,f.polos,&f.len_polos);
 
 	printf ("Ingrese constante de proporcionalidad (k): ");
 	scanf ("%d", &f.k);
@@ -139,3 +80,38 @@ void evaluar (func_trans func) {
 
 }
 
+void ingreso_ceros_polos (int t, complejoBin* array, int* total) {
+
+	char fin = 'S';
+	int i, ing, ing2;
+	char *cad= malloc (5);
+
+	if (t==0) {
+		strcpy (cad, "Cero");
+	} else {
+		strcpy (cad, "Polo");
+	}
+
+	for (i = 0; (i < 10) & (fin == 'S'); i++) {
+
+		printf("%s [%d]: \n",cad, i);
+		scanf("%d %d", &ing, &ing2);
+		while (getchar() != '\n')
+			;
+
+		if (i != 9) {
+
+			printf("Desea ingresar otro %s? \nS-Si \nN-No\n", cad);
+			scanf("%c", &fin);
+			while (getchar() != '\n')
+				;
+		}
+
+		array[i].real = ing;
+		array[i].imaginario = ing2;
+
+	}
+
+	*total = i;
+
+}

@@ -22,5 +22,6 @@ typedef struct {
 
 func_trans ingreso_func_transferencia ();
 void evaluar (func_trans);
+void ingreso_ceros_polos (int, complejoBin*, int*);
 
 #endif /* TRANSFERENCIA_H_ */
