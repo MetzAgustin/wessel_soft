@@ -72,16 +72,16 @@ void raizN_esima_pol (complejoPol x, int rad){
 
 	for (i=0; i<rad; i++) {
 
-		printf ("\n w(%d) = [ %f ; %f ] \n", i, modulo, x.argumento/rad + 2*i*M_PI/rad);
+		printf ("\n w(%d) = [%.3f;%.3f] \n", i, modulo, x.argumento/rad + 2*i*M_PI/rad);
 
 	}
 
 	printf ("Raices primitivas: \n");
 
-	for (i = 0; i < rad; i++) {
+	for (i = 1; i < rad; i++) {
 
 		if (mcd(rad,i) == 1) {
-			printf("\n w(%d) = [ %f ; %f ] \n", i, modulo,x.argumento / rad + 2 * i * M_PI / rad);
+			printf("\n w(%d) = [%.3f;%.3f] \n", i, modulo,x.argumento / rad + 2 * i * M_PI / rad);
 		}
 	}
 

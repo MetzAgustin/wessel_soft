@@ -34,16 +34,16 @@ func_trans ingreso_func_transferencia () {
 	int i=0;
 	for (i=0; i<=f.len_ceros;i++) {
 		
-		printf ("[s-(%.2f,%.2f)] ", f.ceros[i].real, f.ceros[i].imaginario);
+		printf ("[s-(%.2f;%.2f)] ", f.ceros[i].real, f.ceros[i].imaginario);
 		
 	};
 	
-	printf ("\n         ------------------------------------------\n"
+	printf ("\n         -------------------------------------------------------\n"
 			"             ");
 	
 	for (i=0; i<=f.len_polos;i++) {
 		
-		printf ("[s-(%.2f,%.2f)] ", f.polos[i].real, f.polos[i].imaginario);
+		printf ("[s-(%.2f;%.2f)] ", f.polos[i].real, f.polos[i].imaginario);
 		
 	};
 	

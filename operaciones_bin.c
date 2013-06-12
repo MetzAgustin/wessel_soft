@@ -86,15 +86,8 @@ complejoBin potenciaNat_bin (complejoBin x, int potencia){
 
 void raizN_esima_bin (complejoBin x, int rad){
 
-	if (rad!=2){
+	raizN_esima_pol (convertBinToPolar (x), rad);
 
-		raizN_esima_pol (convertBinToPolar (x), rad);
-
-	} else {
-
-		raizCuadrada_bin (x);
-
-	}
 }
 
 void raizCuadrada_bin (complejoBin x){
