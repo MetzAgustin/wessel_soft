@@ -28,6 +28,25 @@ func_trans ingreso_func_transferencia () {
 	printf ("Ingrese constante de proporcionalidad (k): ");
 	scanf ("%d", &f.k);
 	while(getchar()!='\n');
+	
+	printf ("F (s) = %d ", f.k);
+	
+	int i=0;
+	for (i=0; i<=f.len_ceros;i++) {
+		
+		printf ("[ s - ( %d , %d ) ] ", f.ceros[i].real, f.ceros[i].imagin);
+		
+	};
+	
+	printf ("         ------------------------------------------");
+	
+	for (i=0; i<=f.len_polos;i++) {
+		
+		printf ("[ s - ( %d , %d ) ] ", f.polos[i].real, f.polos[i].imagin);
+		
+	};
+	
+	printf ("\n\n");
 
 	return f;
 
