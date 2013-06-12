@@ -17,7 +17,7 @@ void imprimir (void* complejo, int forma) {
 		complejoBin* x= malloc (sizeof (complejoBin));
 		x= (complejoBin*)complejo;
 
-		printf (" ( %f ; %f ) \n", x->real, x->imaginario);
+		printf (" (%.2f;%.2f) \n", x->real, x->imaginario);
 
 	}
 
