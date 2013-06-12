@@ -67,18 +67,18 @@ void evaluar (func_trans func) {
 	complejoBin numerador = {1,1};
 	complejoBin denominador = {1,1};
 
-	for (i=0; i<func.len_ceros; i++) {
+	for (i=0; i<=func.len_ceros; i++) {
 
 		vec_numerador[i]= restar_bin (comp, func.ceros[i]);
 
 	}
 
-	for (i=0; i<func.len_polos; i++) {
+	for (i=0; i<=func.len_polos; i++) {
 
 		vec_denominador[i]= restar_bin (comp, func.polos[0]);
 	}
 
-	for (i=0; i<func.len_ceros; i++) {
+	for (i=0; i<=func.len_ceros; i++) {
 
 		numerador = multiplicar_bin (numerador, vec_numerador [i]);
 
