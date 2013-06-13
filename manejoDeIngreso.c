@@ -13,6 +13,7 @@
 #include "impresion.h"
 #include "fasores.h"
 
+
 void menu (){
 
 	printf ("\nSeleccione operacion a efectuar:\n");
@@ -40,6 +41,7 @@ void seleccion(char op) {
 
 	case 'F':
 		operacion_suma_fasores ();
+		proceder ();
 		break;
 
 	case 'P':
@@ -50,19 +52,24 @@ void seleccion(char op) {
 			scanf ("%d", &pot);
 			while (getchar() != '\n');
 			complejoBin resPot = potenciaNat_bin (p, pot);
+			printf ("\nResultado de la potencia: ");
 			imprimir((void*)&resPot, 0);
+			proceder ();
 			break;
 		}
-		if (seleccionarForma() == 'P') {
+		else {
 			int pot;
 			complejoPol p = ingresarPolar();
 			printf ("Ingrese potencia natural: ");
 			scanf ("%d", &pot);
 			while (getchar() != '\n');
 			complejoPol resPot = potenciaNat_pol (p, pot);
+			printf ("\nResultado de la potencia: ");
 			imprimir((void*)&resPot, 1);
+			proceder ();
 			break;
 		}
+		proceder ();
 		break;
 
 	case 'R':
@@ -74,9 +81,10 @@ void seleccion(char op) {
 			while (getchar() != '\n')
 				;
 			raizN_esima_bin(p, raiz);
+			proceder ();
 			break;
 		}
-		if (seleccionarForma() == 'P') {
+		else {
 			int raiz;
 			complejoPol p = ingresarPolar();
 			printf("Ingrese raiz natural: ");
@@ -84,76 +92,90 @@ void seleccion(char op) {
 			while (getchar() != '\n')
 				;
 			raizN_esima_pol(p, raiz);
+			proceder ();
 			break;
 		}
+		proceder ();
 		break;
 
 	case '+':
 		if (seleccionarForma ()=='B') {
 			parBin par= cargar_parBinom ();
 			complejoBin suma = sumar_bin (par.comp1, par.comp2);
-			printf ("Resultado de la suma: ");
+			printf ("\nResultado de la suma: ");
 			imprimir ((void*)&suma,0);
+			proceder ();
 			break;
 		}
-		if (seleccionarForma ()=='P') {
+		else {
 			parPol par= cargar_parPolar ();
 			complejoPol suma = sumar_pol (par.comp1, par.comp2);
-			printf ("Resultado de la suma: ");
+			printf ("\nResultado de la suma: ");
 			imprimir ((void*)&suma,1);
+			proceder ();
 			break;
 		}
+		proceder ();
 		break;
 
 	case '-':
 		if (seleccionarForma ()=='B') {
 			parBin par= cargar_parBinom ();
 			complejoBin resta = restar_bin (par.comp1, par.comp2);
-			printf ("Resultado de la resta: ");
+			printf ("\nResultado de la resta: ");
 			imprimir ((void*)&resta,0);
+			proceder ();
 			break;
 		}
-		if (seleccionarForma ()=='P') {
+		else {
 			parPol par= cargar_parPolar ();
 			complejoPol resta = restar_pol (par.comp1, par.comp2);
-			printf ("Resultado de la resta: ");
+			printf ("\nResultado de la resta: ");
 			imprimir ((void*)&resta,1);
+			proceder ();
 			break;
 		}
+		proceder ();
 		break;
 
 	case '*':
 		if (seleccionarForma ()=='B') {
 			parBin par= cargar_parBinom ();
 			complejoBin prod = multiplicar_bin (par.comp1, par.comp2);
-			printf ("Resultado del producto: ");
+			printf ("\nResultado del producto: ");
 			imprimir ((void*)&prod,0);
+			proceder ();
 			break;
 		}
-		if (seleccionarForma ()=='P') {
+		else {
 			parPol par= cargar_parPolar ();
 			complejoPol prod = multiplicar_pol (par.comp1, par.comp2);
-			printf ("Resultado del producto: ");
+			printf ("\nResultado del producto: ");
 			imprimir ((void*)&prod,1);
+			proceder ();
 			break;
 		}
+		proceder ();
 		break;
 
 	case '/':
 		if (seleccionarForma ()=='B') {
 			parBin par= cargar_parBinom ();
 			complejoBin div = dividir_bin (par.comp1, par.comp2);
-			printf ("Resultado del cociente: ");
+			printf ("\nResultado del cociente: ");
 			imprimir ((void*)&div,0);
+			proceder ();
 			break;
 		}
-		if (seleccionarForma ()=='P') {
+		else {
 			parPol par= cargar_parPolar ();
 			complejoPol div = dividir_pol (par.comp1, par.comp2);
-			printf ("Resultado del cociente: ");
+			printf ("\nResultado del cociente: ");
 			imprimir ((void*)&div,1);
+			proceder ();
 			break;
 		}
+		proceder ();
 		break;
 
 	case 'T':
@@ -171,6 +193,10 @@ void seleccion(char op) {
 			while(getchar()!='\n');
 		}
 
+		proceder ();
+		break;
+	default:
+		error ();
 		break;
 
 	}
@@ -188,6 +214,11 @@ char seleccionarForma () {
 
 	while (getchar() != '\n')
 		;
+
+	if ((forma=='B') || (forma=='P')){
+
+
+	} else error ();
 
 	return forma;
 }
@@ -247,4 +278,11 @@ complejoPol ingresarPolar () {
 	imprimir (&pol, 1);
 
 	return pol;
+}
+
+void proceder () {
+
+	printf ("\nPresione ENTER para continuar\n\n");
+	getchar ();
+
 }

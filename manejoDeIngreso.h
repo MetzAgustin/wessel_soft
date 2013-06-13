@@ -24,7 +24,7 @@ parBin cargar_parBinom ();
 parPol cargar_parPolar ();
 complejoBin ingresarBinomico ();
 complejoPol ingresarPolar ();
-
+void proceder ();
 
 
 

@@ -9,5 +9,6 @@
 #define IMPRESION_H_
 
 void imprimir (void*, int);
+void error ();
 
 #endif /* IMPRESION_H_ */

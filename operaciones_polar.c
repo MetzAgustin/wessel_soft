@@ -76,7 +76,7 @@ void raizN_esima_pol (complejoPol x, int rad){
 
 	}
 
-	printf ("Raices primitivas: \n");
+	printf ("\nRaices primitivas: \n");
 
 	for (i = 1; i < rad; i++) {
 

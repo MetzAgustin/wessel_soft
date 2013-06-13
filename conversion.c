@@ -32,7 +32,7 @@ complejoPol convertBinToPolar (complejoBin x) {
 
 	} else {
 
-		polar.argumento= M_PI_2; //o puede ser 3*M_PI_2 TODO;
+		polar.argumento= M_PI_2; //o puede ser 3*M_PI_2;
 
 	}
 

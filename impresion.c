@@ -10,6 +10,13 @@
 #include <stdlib.h>
 #include "definiciones.h"
 
+void error () {
+
+	printf ("\n\nError de ingreso de datos, se cerrara el programa");
+	exit (-1);
+
+}
+
 void imprimir (void* complejo, int forma) {
 
 	if (forma==0) {	//hay que mostrar un BINOMICO
